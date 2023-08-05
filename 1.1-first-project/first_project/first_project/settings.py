@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # здесь мы подключаем наши приложения
-    'app'
+    'app', 'demo'
 ]
+
+CONTACT_EMAIL = "potapchuk.1988@list.ru"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
