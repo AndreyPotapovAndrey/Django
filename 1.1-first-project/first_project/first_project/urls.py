@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from app.views import home_view, time_view, workdir_view, hello, sum, privet, pagi, hello_view
+from app.views import home_view, time_view, workdir_view, hello, sum, privet, pagi, hello_view, create_car, list_car, \
+    create_person, list_person
 
 
 urlpatterns = [
@@ -31,7 +32,11 @@ urlpatterns = [
     # сработает, только если в параметрах будут целые числа
     path('privet/', privet),
     path('pagi/', pagi),
-    path('hello_view/', hello_view)
+    path('hello_view/', hello_view),
+    path('new_car/', create_car),
+    path('cars/', list_car),
+    path('new_person/', create_person),
+    path('people/', list_person),
 ]
 
 
