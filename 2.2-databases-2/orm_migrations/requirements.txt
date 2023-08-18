@@ -1,2 +1,4 @@
-django
+django==4.2.4
 psycopg2-binary
+
+django-debug-toolbar==4.2.0
