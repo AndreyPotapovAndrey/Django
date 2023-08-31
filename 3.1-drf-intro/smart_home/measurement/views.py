@@ -18,7 +18,7 @@ class SensorView(RetrieveUpdateAPIView):
     serializer_class = SensorDetailSerializer
 
 
-class MeasurementView(CreateAPIView):
+class MeasurementView(RetrieveUpdateAPIView):
     """Измерения с возможностью добавления измерений"""
     queryset = Measurement.objects.all()
     serializer_class = MeasurementSerializer
