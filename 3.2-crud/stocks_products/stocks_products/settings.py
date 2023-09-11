@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'django_filters',
 
     'logistic',
 ]
@@ -78,11 +79,13 @@ WSGI_APPLICATION = 'stocks_products.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'netology_stocks_products',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "netology_stocks_products",
+        "USER": "postgres",
+        "PASSWORD": "Serezha2907",
+        "HOST": "localhost",
+        "PORT": "5432"
     }
 }
 
@@ -129,3 +132,13 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',  # Стандартная фильтрация по параметрам
+    ],
+    # 'SEARCH_PARAM': 'q',  # Вместо слова search для поиска (резерв системы) теперь используем q
+    # 'ORDERING_PARAM': 'o',  # Аналогично
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 1
+}
